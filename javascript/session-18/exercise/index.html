@@ -12,13 +12,13 @@
     <!-- HTML -->
     <div class="container">
         <div class="row">
-            <div class="col-md-6 md-offset-3">
+            <div class="col-md-6 offset-md-3">
                 <div class="card">
                     <div class="card-header">
                         To-do List
                     </div>
                     <div class="card-body">
-                        <form action="#" class="d-flex justify-content-between">
+                        <form action="#" class="d-flex align-items-center">
                             <input type="text" id="task" class="form-control" />
                             <button id="create-task" class="btn btn-primary">Create</button>
                         </form>
@@ -36,8 +36,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script>
-        const tasks = [];
-        // localStorage <- tasks
+        let tasks = [];
+        const create_task_btn = document.getElementById('create-task');
+        
         class Task {
             // display tasks
             static display() {
@@ -62,24 +63,21 @@
 
             // delete task
             static delete(task) {
-                const elem = task;
-                const ind = tasks.indexOf(elem);
-                if (ind > -1) {
-                    tasks.splice(elem, 1);
-                }
+                tasks = tasks.filter(item => item !== task);
             }
         }
+        
+        create_task_btn.addEventListener('click', e => {
+            const task = document.querySelector('#task');
+            const task_value = document.querySelector('#task').value;
 
-        document.getElementById('create-task').addEventListener('click', e => {
-            const task = document.querySelector('#task').value;
-
-            if (task !== '') {
-                Task.create(task);
+            if (task_value !== '') {
+                Task.create(task_value);
                 Task.display();
                 
-                document.querySelector('#task').value = '';
+                task.value = '';
             } else {
-                document.getElementById('task').style.border = "1px solid red";
+                task.style.border = "1px solid red";
             }
 
             return false;
@@ -91,7 +89,6 @@
 
             return false;
         }
-
     </script>
 </body>
 </html>
