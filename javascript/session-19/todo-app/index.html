@@ -98,7 +98,11 @@
 
             // delete task
             static delete(task) {
-                tasks = tasks.filter(item => item !== task);
+                var index = tasks.indexOf(task);
+
+                if(index > -1) {
+                    tasks.splice(index, 1);
+                }
             }
 
             // search task
