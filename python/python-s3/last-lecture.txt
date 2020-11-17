@@ -27,22 +27,6 @@
     [x] Access string (sequences)
     [x] Change values
     [x] Iterate strings 
-    [x] String functions  (https://www.w3schools.com/python/python_ref_string.asp)
+    [x] String functions  
 [x] Error handling
 [x] Modules
-[x] Examples
-
-
------------------------------------------
-            Mutable     Immutable
------------------------------------------
-list           x
------------------------------------------
-tuple                      x
------------------------------------------
-set            x
------------------------------------------
-dict           x
------------------------------------------
-str            x
------------------------------------------
