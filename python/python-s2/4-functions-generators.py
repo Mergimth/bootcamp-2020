@@ -13,7 +13,6 @@ def sumoffirstnnum(n):
 #     return sum
 
 # sum() -> sum of list elements
-
 print(sum(sumoffirstnnum(4200)))
 
 # sumoffirstnnum(20) # 1+2+3+4+....+20
