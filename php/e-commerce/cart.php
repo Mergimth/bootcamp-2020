@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!isset($_SESSION['cart'])) {
-       die("Cart is empty!"); 
+       header("Location: index.html");
     } else {
         $products = $_SESSION['cart'];
     }

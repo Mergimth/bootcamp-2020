@@ -1,3 +1,9 @@
+<?php
+    if(isset($_GET['action']) && ($_GET['action'] == 'logout')) {
+        session_destroy();
+        header("Location: login.php");
+    }
+?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
     <a class="navbar-brand" href="#">e-commerce</a>
@@ -21,7 +27,7 @@
             <?php endif; ?>
             <li class="nav-item">
                 <a class="nav-link" href="cart.php">
-                    Cart (<?= count($_SESSION['cart']) ?>)
+                    Cart (<?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>)
                 </a>
             </li>
             <?php if(isset($_SESSION['username'])): ?> 
