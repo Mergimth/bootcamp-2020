@@ -1,0 +1,2 @@
+1. Register                     [x]
+2. Upload files - error         [x]

@@ -1,6 +1,6 @@
 Session #5
 -----------------------------------
-[] Flask Web Framework
+[x] Flask Web Framework
     [x] Working with forms
         [x] Accessing data
             [x] Method GET
