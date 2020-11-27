@@ -2,8 +2,6 @@
     session_start();
     include 'autoload.php';
 
-    echo $_SESSION['is_admin'];
-
     if(isset($_SESSION['is_admin']) || isset($_COOKIE['is_admin'])) {
         if($_SESSION['is_admin'] != 1) {
             die("You are not allowed to view this page!");
@@ -43,6 +41,8 @@
 </head>
 <body>
 
+    <?php include 'includes/menu.php' ?>
+
     <div class="container my-5">
         <h3>Update product</h3>
         <div class="row">
@@ -77,12 +77,12 @@
                     <div class="form-group">
 
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="images">Images</label>
                         <br />
                         <input type="file" name="images[]" multiple id="images" />
-                    </div>
-                    <button type="submit" name="update_product_btn" class="btn btn-primary">Save</button>
+                    </div> -->
+                    <button type="submit" name="update_product_btn" class="btn btn-primary">Update</button>
                 </form>
             </div>
         </div>

@@ -56,7 +56,7 @@
                     }
                 ?>
 
-                <a href="index.php"><h1>e-commerce</h1></a>
+                <a href="index.php"><h1 class="my-5 align-center">e-commerce</h1></a>
                 
                 <form method="POST">
                 <div class="form-group">

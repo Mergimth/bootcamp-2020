@@ -7,7 +7,8 @@
     if(isset($_POST['login_btn'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $user_obj = new Auth($username, $password);
+        $role = $_POST['role'];
+        $user_obj = new Auth($username, $password, $role);
 
         if($user = $user_obj->login()) {
             $_SESSION['username'] = $user['username'];
@@ -59,9 +60,15 @@
                     }
                 ?>
 
-                <a href="index.php"><h1>e-commerce</h1></a>
+                <a href="index.php"><h1 class="my-5 align-center">e-commerce</h1></a>
 
                 <form method="POST">
+                    <div class="form-group">
+                        <select name="role" class="form-control">
+                            <option value="0">Customer</option>
+                            <option value="1">Administrator</option>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

@@ -21,14 +21,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart | e-commerce</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 </head>
 <body>
+
+<?php include 'includes/menu.php' ?>
     
 <div class="container my-5">
-        <h3>Cart</h3>
+        <h4 class="mb-5">Cart</h4>
         <div class="row">
             <!-- CREATE PRODUCT -->
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <?php if(count($products) > 0): ?>
                 <div class="table-responsive">
                     <table class="table table-bordered">

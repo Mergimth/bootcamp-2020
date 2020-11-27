@@ -38,7 +38,7 @@
         if(!empty($title) && !empty($price) && !empty($qty) && !empty($_FILES['image']['name'])) {
             $images = [$_FILES['image']['name']];
             
-            move_uploaded_file($_FILES['image']['tmp_name'], $_FILES['image']['name']);
+            move_uploaded_file($_FILES['image']['tmp_name'], "./assets/img/products/".$_FILES['image']['name']);
 
             if($p->create(['title' => $title, 'price' => $price, 'qty' => $qty, 'images' => json_encode($images), "admin_id" => 1]))
                 header("Location: admin-panel.php");
@@ -84,9 +84,7 @@
 </head>
 <body>
 
-    <div class="container my-5">
-        <?= $_SESSION['username'] ?> | <a href="?action=logout">Logout</a>
-    </div>
+    <?php include 'includes/menu.php' ?>
 
     <div class="container my-5">
         <h3>Create product</h3>

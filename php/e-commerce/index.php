@@ -56,9 +56,7 @@
 </head>
 <body>
 
-    <div class="container">
-        <a href="cart.php">Cart (<?= count($_SESSION['cart']) ?>)</a>
-    </div>
+    <?php include 'includes/menu.php' ?>
 
     <?php
                 if(count($errors)) {
@@ -85,7 +83,7 @@
 
                                 if(count($images)) {
                             ?>
-                                <img src="<?= $images[0] ?>" alt="<?= $product['title'] ?>" class="img-fluid" />
+                                <img src="./assets/img/products/<?= $images[0] ?>" alt="<?= $product['title'] ?>" class="img-fluid" style="height: 220px; display: block; margin: 0px auto;" />
                                 <?php }  ?>
                             <h4><?= $product['title'] ?></h4>
                             <p>
