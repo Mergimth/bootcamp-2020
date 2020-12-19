@@ -9,7 +9,7 @@
                 <h3>Edit: {{ todo.title }}</h3>
             </div>
             <div class="card-body">
-                <form action="{% url 'update' todo.id %}" method="POST">
+                <form action="{% url 'update' todo.id %}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form }}
                     <button type="submit" class="btn btn-sm btn-primary">

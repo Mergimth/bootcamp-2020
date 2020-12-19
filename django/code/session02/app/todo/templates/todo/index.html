@@ -9,7 +9,7 @@
                 Create new task
             </div>
             <div class="card-body">
-                <form action="{% url 'create' %}" method="POST">
+                <form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form }}
                     <button type="submit" class="btn btn-sm btn-primary">
